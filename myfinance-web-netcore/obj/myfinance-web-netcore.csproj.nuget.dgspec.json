@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/home/alves/Documentos/POS/PráticasDesenvolvimentoSoftware/myfinance-web-netcore/myfinance-web-netcore/myfinance-web-netcore.csproj": {}
+    "/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore.csproj": {}
   },
   "projects": {
-    "/home/alves/Documentos/POS/PráticasDesenvolvimentoSoftware/myfinance-web-netcore/myfinance-web-netcore/myfinance-web-netcore.csproj": {
+    "/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/alves/Documentos/POS/PráticasDesenvolvimentoSoftware/myfinance-web-netcore/myfinance-web-netcore/myfinance-web-netcore.csproj",
+        "projectUniqueName": "/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore.csproj",
         "projectName": "myfinance-web-netcore",
-        "projectPath": "/home/alves/Documentos/POS/PráticasDesenvolvimentoSoftware/myfinance-web-netcore/myfinance-web-netcore/myfinance-web-netcore.csproj",
-        "packagesPath": "/home/alves/.nuget/packages/",
-        "outputPath": "/home/alves/Documentos/POS/PráticasDesenvolvimentoSoftware/myfinance-web-netcore/myfinance-web-netcore/obj/",
+        "projectPath": "/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore.csproj",
+        "packagesPath": "/home/guilherme/.nuget/packages/",
+        "outputPath": "/home/guilherme/workspace/myfinance-web-netcore/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/alves/.nuget/NuGet/NuGet.Config"
+          "/home/guilherme/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "/home/guilherme/.dotnet/sdk/7.0.304/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/alves/.dotnet/sdk/6.0.408/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/guilherme/.dotnet/sdk/7.0.304/RuntimeIdentifierGraph.json"
         }
       }
     }
