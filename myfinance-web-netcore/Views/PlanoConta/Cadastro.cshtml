@@ -1,7 +1,32 @@
-﻿@{
+﻿@model PlanoContaModel
+
+@{
     ViewData["Title"] = "Cadastro de Plano de Contas";
 }
 
-<div class="text-center">
-    <h1 class="display-4">@ViewData["Title"]</h1>
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+    </div>
+    <form asp-controller="PlanoConta" asp-action="Cadastro" method="post">
+        <div class="form-control">
+
+            <input type="hidden" id="id" asp-for="Id" />
+
+            <div class="mb-3">
+                <label for="descricao">Descrição: </label>
+                <input type="text" id="descricao" placeholder="Descrição" asp-for="Descricao" /> 
+            </div>
+
+            <div class="mb-3">
+                <label for="descricao">Tipo: </label>
+                <label>@Html.RadioButtonFor(x => x.Tipo, "D") Despesa</label>
+                <label>@Html.RadioButtonFor(x => x.Tipo, "R") Reeita</label>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary btn-lg ">Salvar</button>
+            </div>
+        </div>
+    </form>
 </div>

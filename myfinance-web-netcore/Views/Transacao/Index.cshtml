@@ -1,31 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "Plano Conta 1";
+    ViewData["Title"] = "Tranasções Financeiras";
 }
 
 <div class="text-center">
     <h1 class="display-4">@ViewData["Title"]</h1>
 </div>
 
-<button type="button" class="btn btn-info" onclick="irParaCadastro()">Cadastrar</button>
+<button type="button" class="btn btn-info" onclick="irParaCadastro()">Registrar Transação</button>
 
 <table class="table">
     <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Descrição</th>
+            <th scope="col">Data</th>
+            <th scope="col">Histórico</th>
+            <th scope="col">Valor</th>
             <th scope="col">Tipo</th>
+            <th scope="col">Descrição</th>
             <th scope="col">#</th>
             <th scope="col">#</th>
         </tr>
     </thead>
     <tbody>
         @{
-            foreach(var item in (List<PlanoContaModel>)ViewBag.ListaPlanoConta)
+            foreach(var item in (List<TransacaoModel>)ViewBag.ListaTransacao)
             {
                 <tr>
                     <td>@item.Id</td>
-                    <td>@item.Descricao</td>
-                    <td>@item.Tipo</td>
+                    <td>@item.Data</td>
+                    <td>@item.Historico</td>
+                    <td>@item.Valor</td>
+                    <td>@item.ItemPlanoConta.Tipo</td>
+                    <td>@item.ItemPlanoConta.Descricao</td>
                     <td><button type="button" onclick="irParaEdicao(@item.Id)" class="btn btn-warning">Editar</button></td>
                     <td>
                         @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
@@ -38,10 +44,10 @@
 
 <script>
     function irParaCadastro(){
-        window.location.href = "../PlanoConta/Cadastro";
+        window.location.href = "../Transacao/Cadastro";
     }
 
     function irParaEdicao(id){
-        window.location.href = "../PlanoConta/Cadastro/"+id;
+        window.location.href = "../Transacao/Cadastro/"+id;
     }
 </script>
