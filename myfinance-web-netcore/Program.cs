@@ -15,6 +15,7 @@ builder.Services.AddDbContext<MyFinanceDbContext>();
 builder.Services.AddScoped<IObterPlanoContaUseCase, ObterPlanoContaUseCase>();
 builder.Services.AddScoped<IPlanoContaService, PlanoContaService>();
 builder.Services.AddScoped<IPlanoContaRepository, PlanoContaRepository>();
+builder.Services.AddScoped<ICadastrarPlanoContaUseCase, CadastrarPlanoContaUseCase>();
 
 var app = builder.Build();
 

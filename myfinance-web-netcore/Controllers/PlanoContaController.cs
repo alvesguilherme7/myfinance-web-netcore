@@ -15,13 +15,16 @@ namespace myfinance_web_netcore.Controllers {
         private readonly ILogger<HomeController> _logger;
         private readonly MyFinanceDbContext _myFinanceDbContext;
         private readonly IObterPlanoContaUseCase _obterPlanoContaUseCase;
+        private readonly ICadastrarPlanoContaUseCase _cadastrarPlanoContaUseCase;
 
         public PlanoContaController(ILogger<HomeController> logger, MyFinanceDbContext myFinanceDbContext,
-        IObterPlanoContaUseCase obterPlanoContaUseCase)
+        IObterPlanoContaUseCase obterPlanoContaUseCase,
+        ICadastrarPlanoContaUseCase cadastrarPlanoContaUseCase)
         {
             _logger = logger;
             _myFinanceDbContext = myFinanceDbContext;
             _obterPlanoContaUseCase = obterPlanoContaUseCase;
+            _cadastrarPlanoContaUseCase = cadastrarPlanoContaUseCase;
         }
 
         [HttpGet]
@@ -56,21 +59,7 @@ namespace myfinance_web_netcore.Controllers {
         [Route("Cadastro/{id}")]
         public IActionResult Cadastro(PlanoContaModel input)
         {
-            var planoConta = new PlanoConta(){
-                Id = input.Id,
-                Descricao = input.Descricao,
-                Tipo = input.Tipo
-            };
-
-            if(planoConta.Id == null){
-                _myFinanceDbContext.PlanoConta.Add(planoConta);
-            }else{
-                _myFinanceDbContext.PlanoConta.Attach(planoConta);
-                _myFinanceDbContext.Entry(planoConta).State = EntityState.Modified;
-            }
-
-            _myFinanceDbContext.SaveChanges();
-    
+            _cadastrarPlanoContaUseCase.CadastrarPlanoContaModel(input);
             return RedirectToAction("Index");
         }
 

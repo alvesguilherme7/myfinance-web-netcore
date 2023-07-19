@@ -9,5 +9,6 @@ namespace myfinance_web_netcore.Services.Interfaces
     public interface IPlanoContaService
     {
         List<PlanoContaModel> ListaPlanoContaModel();
+        void cadastrarPlanoConta(PlanoContaModel planoContaModel);
     }
 }

@@ -9,5 +9,9 @@ namespace myfinance_web_netcore.Repository.Interface
     public interface IPlanoContaRepository
     {
         List<PlanoConta> PlanoContas();
+        void SalvarPlanoConta(PlanoConta planoConta);
+
+        void AtualizarPlanoConta(PlanoConta planoConta);
+        void commit();
     }
 }

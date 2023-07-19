@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using myfinance_web_netcore.Models;
+using myfinance_web_netcore.Domain;
 using myfinance_web_netcore.Repository.Interface;
 using myfinance_web_netcore.Services.Interfaces;
 
@@ -15,6 +16,21 @@ namespace myfinance_web_netcore.Services.PlanoConta
 
         public PlanoContaService(IPlanoContaRepository planoContaRepository){
             _planoContaRepository = planoContaRepository;
+        }
+
+        public void cadastrarPlanoConta(PlanoContaModel planoContaModel)
+        {
+            var planoConta = new Domain.PlanoConta(){
+                Id = planoContaModel.Id,
+                Descricao = planoContaModel.Descricao,
+                Tipo = planoContaModel.Tipo
+            };
+
+            if(planoConta.Id == null){
+                _planoContaRepository.SalvarPlanoConta(planoConta);
+            }else{
+                _planoContaRepository.AtualizarPlanoConta(planoConta);
+            }
         }
 
         public List<PlanoContaModel> ListaPlanoContaModel()
