@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Tranasções Financeiras";
+    ViewData["Title"] = "Transações Financeiras";
 }
 
 <div class="text-center">
@@ -34,7 +34,7 @@
                     <td>@item.ItemPlanoConta.Descricao</td>
                     <td><button type="button" onclick="irParaEdicao(@item.Id)" class="btn btn-warning">Editar</button></td>
                     <td>
-                        @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+                        @Html.ActionLink("Excluir", "Excluir", new { id = item.Id }, new { @class = "btn btn-danger"})
                     </td>
                 </tr>
             }

@@ -1,10 +1,44 @@
 ﻿@model TransacaoModel
 
-@{
-    ViewData["Title"] = "Transações Financeiras";
-}
-<div class="container">
-    <div class="text-center">
-        <h1 class="display-4">@ViewData["Title"]</h1>
+
+<h1 class="display-4">Transações Financeiras</h1>
+
+
+<form asp-controller="Transacao" asp-action="Cadastro" method="post">
+    <div class="container">
+        <div class="mb-3">
+            <label class="form-label">Data</label>
+            <input type="hidden" id="txtId" class="form-control" asp-for="Id" /> 
+            <input type="date" id="txtData" class="form-control" asp-for= "Data" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Valor</label>
+            <input type="text" id="txtValor" class="form-control" asp-for="Valor" step="0.01" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Item Plano Conta</label>
+            @Html.DropDownListFor(m => m.PlanoContaId, Model.PlanoContas, new {@class="form-select"} )
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Histórico</label>
+            <input type="text" id="txtHistorico" class="form-control" asp-for="Historico"/>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary btn-1g">Salvar</button>
+            <button type="button" class="btn btn-secondary btn-1g" onclick="Voltar()">Cancelar</button>
+        </div>
+        
     </div>
-</div>
+    
+</form>
+
+<script>
+    function Voltar(){
+        window.location.href = "../Transacao";
+    }
+
+    function irParaEdicao(id){
+        window.location.href = "../PlanoConta/Cadastro/"+id;
+    }
+</script>

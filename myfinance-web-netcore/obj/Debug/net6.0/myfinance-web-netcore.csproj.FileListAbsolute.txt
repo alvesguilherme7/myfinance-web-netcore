@@ -65,6 +65,12 @@
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/myfinance-web-netcore.pdb
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Azure.Core.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Azure.Identity.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/System.Web.Mvc.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/System.Web.Razor.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/System.Web.Helpers.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/System.Web.WebPages.Deployment.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/System.Web.WebPages.Razor.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/System.Web.WebPages.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.Bcl.AsyncInterfaces.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.Data.SqlClient.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.dll
@@ -89,6 +95,7 @@
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.SqlServer.Server.dll
+/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.Web.Infrastructure.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Microsoft.Win32.SystemEvents.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/MySqlConnector.dll
 /home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
