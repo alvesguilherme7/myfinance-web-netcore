@@ -11,7 +11,8 @@ namespace myfinance_web_netcore.Repository.Interface
         List<PlanoConta> PlanoContas();
         void SalvarPlanoConta(PlanoConta planoConta);
 
-        void AtualizarPlanoConta(PlanoConta planoConta);
-        void commit();
+        void ExcluirPlanoConta(PlanoConta planoConta);
+
+        PlanoConta BuscarPlanoConta(PlanoConta planoConta);
     }
 }

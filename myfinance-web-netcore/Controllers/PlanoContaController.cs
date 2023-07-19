@@ -16,15 +16,21 @@ namespace myfinance_web_netcore.Controllers {
         private readonly MyFinanceDbContext _myFinanceDbContext;
         private readonly IObterPlanoContaUseCase _obterPlanoContaUseCase;
         private readonly ICadastrarPlanoContaUseCase _cadastrarPlanoContaUseCase;
+        private readonly IExcluirPlanoContaUseCase _excluirPlanoContaUseCase;
+        private readonly IBuscarPlanoContaUseCase _buscarPlanoContaUseCase;
 
         public PlanoContaController(ILogger<HomeController> logger, MyFinanceDbContext myFinanceDbContext,
         IObterPlanoContaUseCase obterPlanoContaUseCase,
-        ICadastrarPlanoContaUseCase cadastrarPlanoContaUseCase)
+        ICadastrarPlanoContaUseCase cadastrarPlanoContaUseCase,
+        IExcluirPlanoContaUseCase excluirPlanoContaUseCase,
+        IBuscarPlanoContaUseCase buscarPlanoContaUseCase)
         {
             _logger = logger;
             _myFinanceDbContext = myFinanceDbContext;
             _obterPlanoContaUseCase = obterPlanoContaUseCase;
             _cadastrarPlanoContaUseCase = cadastrarPlanoContaUseCase;
+            _excluirPlanoContaUseCase = excluirPlanoContaUseCase;
+            _buscarPlanoContaUseCase = buscarPlanoContaUseCase;
         }
 
         [HttpGet]
@@ -40,17 +46,7 @@ namespace myfinance_web_netcore.Controllers {
         [Route("Cadastro/{id}")]
         public IActionResult Cadastro(int? id)
         {
-            var planoConta = new PlanoContaModel();
-
-            if(id != null){
-                var planoContaDomain = _myFinanceDbContext.PlanoConta.Where(x => x.Id == id).FirstOrDefault();
-                if(planoContaDomain != null){
-                    planoConta.Id = planoContaDomain.Id;
-                    planoConta.Descricao = planoContaDomain.Descricao;
-                    planoConta.Tipo = planoContaDomain.Tipo;
-                }
-            }    
-            
+            var planoConta = _buscarPlanoContaUseCase.buscarPlanoConta(id);
             return View(planoConta);
         }
 
@@ -67,12 +63,7 @@ namespace myfinance_web_netcore.Controllers {
         [Route("Excluir/{id}")]
         public IActionResult Excluir(int id)
         {
-            var planoConta = _myFinanceDbContext.PlanoConta.Find(id);
-            if(planoConta != null){
-                _myFinanceDbContext.PlanoConta.Remove(planoConta);
-                _myFinanceDbContext.SaveChanges();
-            }
-
+            _excluirPlanoContaUseCase.ExcluirPlanoContaModel(id);
             return RedirectToAction("Index");
         }
 

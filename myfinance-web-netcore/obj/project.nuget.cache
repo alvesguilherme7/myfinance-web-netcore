@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LnMN4roD75p9LZE7OPgS+SuhUrChF7tnXPG7TYiWSJFzZANfoe2qIIsxWY0qtRZxXw1fC11CO0PJ6JQbkjvsIg==",
+  "dgSpecHash": "P2WXB8dvtvYstrXx50vfzXOg599yZwGjM+Yz2hQc2wrTrh50Fb6xOZr3z0b3Q/zKCfY7sTmcUBb5i0zIpydMZw==",
   "success": true,
   "projectFilePath": "/home/guilherme/workspace/myfinance-web-netcore/myfinance-web-netcore/myfinance-web-netcore.csproj",
   "expectedPackageFiles": [
@@ -13,9 +13,9 @@
     "/home/guilherme/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/home/guilherme/.nuget/packages/microsoft.data.sqlclient/5.0.2/microsoft.data.sqlclient.5.0.2.nupkg.sha512",
     "/home/guilherme/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.0.1/microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
-    "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore/7.0.8/microsoft.entityframeworkcore.7.0.8.nupkg.sha512",
-    "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.8/microsoft.entityframeworkcore.abstractions.7.0.8.nupkg.sha512",
-    "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.8/microsoft.entityframeworkcore.analyzers.7.0.8.nupkg.sha512",
+    "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore/7.0.9/microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
+    "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.9/microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",
+    "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.9/microsoft.entityframeworkcore.analyzers.7.0.9.nupkg.sha512",
     "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.8/microsoft.entityframeworkcore.relational.7.0.8.nupkg.sha512",
     "/home/guilherme/.nuget/packages/microsoft.entityframeworkcore.sqlserver/7.0.8/microsoft.entityframeworkcore.sqlserver.7.0.8.nupkg.sha512",
     "/home/guilherme/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",

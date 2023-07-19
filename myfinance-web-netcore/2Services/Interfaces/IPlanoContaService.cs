@@ -10,5 +10,7 @@ namespace myfinance_web_netcore.Services.Interfaces
     {
         List<PlanoContaModel> ListaPlanoContaModel();
         void cadastrarPlanoConta(PlanoContaModel planoContaModel);
+        PlanoContaModel buscarPlanoConta(int? Id);
+        void excluirPlanoConta(int Id);
     }
 }

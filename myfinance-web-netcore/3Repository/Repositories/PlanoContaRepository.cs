@@ -9,37 +9,33 @@ using myfinance_web_netcore.Repository.Interface;
 
 namespace myfinance_web_netcore.Repository.Repositories
 {
-    public class PlanoContaRepository : IPlanoContaRepository
+    public class PlanoContaRepository : Repository<PlanoConta>, IPlanoContaRepository
     {
-        private readonly MyFinanceDbContext _myFinanceDbContext;
 
-        public PlanoContaRepository(MyFinanceDbContext myFinanceDbContext)
+        public PlanoContaRepository(MyFinanceDbContext myFinanceDbContext) : base(myFinanceDbContext)
         {
-            _myFinanceDbContext = myFinanceDbContext;
+        }
+
+        public PlanoConta BuscarPlanoConta(PlanoConta planoConta)
+        {
+            return base.RetornarRegistro(planoConta.Id);
         }
 
         public List<PlanoConta> PlanoContas()
         {
-            return _myFinanceDbContext.PlanoConta.ToList<PlanoConta>();
+            return base.ListarRegistros();
         }
 
         public void SalvarPlanoConta(PlanoConta planoConta)
         {
-            _myFinanceDbContext.PlanoConta.Add(planoConta);
-            _myFinanceDbContext.SaveChanges();
-            commit();
+            base.Cadastrar(planoConta);
         }
 
-        public void AtualizarPlanoConta(PlanoConta planoConta)
+        void IPlanoContaRepository.ExcluirPlanoConta(PlanoConta planoConta)
         {
-            _myFinanceDbContext.PlanoConta.Attach(planoConta);
-            _myFinanceDbContext.Entry(planoConta).State = EntityState.Modified;
-            commit();
-        }
-
-        public void commit()
-        {
-           _myFinanceDbContext.SaveChanges();
+            if(planoConta.Id != null){
+                base.ExcluirRegistro(planoConta.Id);
+            }
         }
     }
 }

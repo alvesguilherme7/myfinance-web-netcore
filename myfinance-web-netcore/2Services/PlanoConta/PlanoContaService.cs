@@ -18,6 +18,16 @@ namespace myfinance_web_netcore.Services.PlanoConta
             _planoContaRepository = planoContaRepository;
         }
 
+        public PlanoContaModel buscarPlanoConta(int? Id)
+        {
+            var planoConta =_planoContaRepository.BuscarPlanoConta(new Domain.PlanoConta(){Id = Id});
+            return new PlanoContaModel(){
+                Id = planoConta.Id,
+                Descricao = planoConta.Descricao,
+                Tipo = planoConta.Tipo
+            };
+        }
+
         public void cadastrarPlanoConta(PlanoContaModel planoContaModel)
         {
             var planoConta = new Domain.PlanoConta(){
@@ -25,12 +35,13 @@ namespace myfinance_web_netcore.Services.PlanoConta
                 Descricao = planoContaModel.Descricao,
                 Tipo = planoContaModel.Tipo
             };
+            _planoContaRepository.SalvarPlanoConta(planoConta);
+        }
 
-            if(planoConta.Id == null){
-                _planoContaRepository.SalvarPlanoConta(planoConta);
-            }else{
-                _planoContaRepository.AtualizarPlanoConta(planoConta);
-            }
+        public void excluirPlanoConta(int Id)
+        {
+            var planoConta  =new Domain.PlanoConta(){Id = Id,};
+            _planoContaRepository.ExcluirPlanoConta(planoConta);
         }
 
         public List<PlanoContaModel> ListaPlanoContaModel()

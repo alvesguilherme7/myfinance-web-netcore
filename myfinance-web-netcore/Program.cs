@@ -1,3 +1,5 @@
+using myfinance_web_netcore.Application.BuscarPlanoContaUseCase;
+using myfinance_web_netcore.Application.ExcluirPlanoContaUseCase;
 using myfinance_web_netcore.Application.Interfaces;
 using myfinance_web_netcore.Application.ObterPlanoContaUseCase;
 using myfinance_web_netcore.Controllers;
@@ -16,6 +18,8 @@ builder.Services.AddScoped<IObterPlanoContaUseCase, ObterPlanoContaUseCase>();
 builder.Services.AddScoped<IPlanoContaService, PlanoContaService>();
 builder.Services.AddScoped<IPlanoContaRepository, PlanoContaRepository>();
 builder.Services.AddScoped<ICadastrarPlanoContaUseCase, CadastrarPlanoContaUseCase>();
+builder.Services.AddScoped<IExcluirPlanoContaUseCase, ExcluirPlanoContaUseCase>();
+builder.Services.AddScoped<IBuscarPlanoContaUseCase, BuscarPlanoContaUseCase>();
 
 var app = builder.Build();
 
