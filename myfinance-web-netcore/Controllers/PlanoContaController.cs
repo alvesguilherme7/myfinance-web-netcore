@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using myfinance_web_netcore.Application.Interfaces;
 using myfinance_web_netcore.Domain;
 using myfinance_web_netcore.Models;
 
@@ -13,31 +14,21 @@ namespace myfinance_web_netcore.Controllers {
 
         private readonly ILogger<HomeController> _logger;
         private readonly MyFinanceDbContext _myFinanceDbContext;
+        private readonly IObterPlanoContaUseCase _obterPlanoContaUseCase;
 
-        public PlanoContaController(ILogger<HomeController> logger, MyFinanceDbContext myFinanceDbContext)
+        public PlanoContaController(ILogger<HomeController> logger, MyFinanceDbContext myFinanceDbContext,
+        IObterPlanoContaUseCase obterPlanoContaUseCase)
         {
             _logger = logger;
             _myFinanceDbContext = myFinanceDbContext;
+            _obterPlanoContaUseCase = obterPlanoContaUseCase;
         }
 
         [HttpGet]
         [Route("/")]
         public IActionResult Index()
         {
-                    
-            var listaPlanoContaModel = new List<PlanoContaModel>();
-            var listaPlanoContas = _myFinanceDbContext.PlanoConta;
-            foreach (var planoConta in listaPlanoContas){
-                var planoContaModel = new PlanoContaModel(){
-                    Id = planoConta.Id,
-                    Descricao = planoConta.Descricao,
-                    Tipo = planoConta.Tipo
-                };
-                listaPlanoContaModel.Add(planoContaModel);
-            }
-
-            ViewBag.ListaPlanoConta = listaPlanoContaModel;
-
+            ViewBag.ListaPlanoConta = _obterPlanoContaUseCase.GetListaPlanoContaModel();
             return View();
         }
 
