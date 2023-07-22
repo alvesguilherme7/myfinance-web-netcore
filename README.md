@@ -12,9 +12,9 @@ Nosso principal objetivo é oferecer aos usuários uma ferramenta acessível, po
 
 ## Integrantes
 
-- Claudia Cristina Ribeiro de Almeida
-- Guilherme Henrique Silva Alves
-- Lucas Cerqueira Vilas Boas
+- <a href="https://github.com/ClauAlmeida">Claudia Cristina Ribeiro de Almeida</a>
+- <a href="https://github.com/alvesguilherme7">Guilherme Henrique Silva Alves</a>
+- <a href="https://github.com/LucasCVilasBoas">Lucas Cerqueira Vilas Boas</a>
 
 
 ## Funcionalidades do MyFinance Web
@@ -71,25 +71,19 @@ Antes de executar o projeto, é necessário configurar o banco de dados. Para is
 - Com o script aberto no SSMS, clique no botão "Executar" ou pressione F5 para criar o banco de dados e as tabelas necessárias.
 
 
-3. **Configurar o Acesso ao Banco de Dados**
+3. **Adicionar bibliotecas ao projeto**
 
-Agora, é necessário configurar o acesso ao banco de dados no projeto. Siga estes passos:
-
-- No terminal ou prompt de comando, navegue até a pasta raiz do projeto .NET, onde o arquivo "myfinance-web-netcore.csproj" está localizado.
+- Inclua a biblioteca do mySQL no .NET, usando o seguinte comando:
 
 ```bash
-cd myfinance-web-netcore
+dotnet add package Pomelo.EntityFrameworkCore.MySqlld
 ```
 
-- Faça uma cópia do arquivo "Config/database.env.example" e renomeie a cópia para "Config/database.env".
+- Inclua a biblioteca do Entity no .NET, usando o seguinte comando:
 
 ```bash
-cp Config/database.env.example Config/database.env
+dotnet add package microsoft.entityframeworkcore.mysql
 ```
-
-- Abra o arquivo "Config/database.env" em um editor de texto e encontre a variável "SERVER".
-
-- Substitua o valor "{HOSTNAME}" pelo nome do seu servidor do Microsoft SQL Server, onde o banco de dados foi criado durante a etapa anterior.
 
 4. **Executar o Build do Projeto**
 
